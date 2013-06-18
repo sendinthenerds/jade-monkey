@@ -1,0 +1,24 @@
+{
+  "name": "jade-monkey",
+  "version": "0.0.0",
+  "description": "Jade Blogging",
+  "main": "jm.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sendinthenerds/jade-monkey.git"
+  },
+  "keywords": [
+    "jade",
+    "blogging"
+  ],
+  "author": "Send In The Nerds",
+  "license": "FREE",
+  "bugs": {
+    "url": "https://github.com/sendinthenerds/jade-monkey/issues"
+  },
+  "dependencies": {
+    "jade": "~0.31.2",
+    "when": "~2.1.1"
+  }
+}
