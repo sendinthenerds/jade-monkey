@@ -1,0 +1,12 @@
+!!!
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(rel='stylesheet', href='#{baseUrl}/www/css/c.min.css')
+        script(type='text/javascript', src='#{baseUrl}/www/js/prettify.js')
+        if (typeof(googleAnalytics) !== 'undefined')
+            include ga
+    body(onload='prettyPrint()')
+        block content

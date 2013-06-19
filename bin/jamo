@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+var path = require('path');
+var fs = require('fs-extra');
+var args = process.argv.slice(2);
+var commandName = args.shift();
+var commands = require('../lib/commands');
+
+var existsSync;
+
+existsSync = fs.existsSync || path.existsSync;
+
+var jmDirectory;
+
+jmDirectory = function(dir) {
+	var parent;
+	if (existsSync(path.join(dir, 'jm.json'))) {
+		return dir;
+	}
+	parent = path.normalize(path.join(dir, '..'));
+	if (parent !== dir) {
+		return jmDirectory(parent);
+	}
+	throw new Error("jm.json not found in " + (process.cwd()));
+};
+
+switch (commandName) {
+    case '-v':
+    case '--version':
+    case 'ver':
+    case 'version':
+        var version = require('../package.json').version;
+        console.log(version);
+        break;
+    default:
+		if (commandName !== 'init') {
+			global.__originalDirname = fs.realpathSync('.');
+			process.chdir(jmDirectory(__originalDirname));
+		}
+        var command = commands[commandName] || commands.help;
+        command(args);
+        break;
+}

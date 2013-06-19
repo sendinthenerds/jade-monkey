@@ -1,9 +1,33 @@
 {
-  "name": "jade-monkey",
-  "version": "0.0.0",
-  "description": "Jade Blogging",
-  "main": "jm.js",
-  "scripts": {},
+  "name": "jamo",
+  "version": "0.0.1",
+  "description": "Jade blogging.",
+  "contributors": [
+    {
+      "name": "Alpha Nerd",
+      "email": "alphanerd@sendinthenerds.com"
+    }
+  ],
+  "main": "./bin/jamo",
+  "bin": {
+    "jamo": "./bin/jamo"
+  },
+  "dependencies": {
+    "jade": "0.27.x",
+    "stylus": "0.28.2",
+    "walk": "*",
+    "fs-extra": "*",
+    "cli-prompt": "~0.1.0",
+    "moment": "~2.0.0",
+    "entities": "~0.1.1",
+    "uglifycss": "~0.0.5"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2"
+  },
+  "scripts": {
+    "test": "none"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/sendinthenerds/jade-monkey.git"
@@ -12,13 +36,9 @@
     "jade",
     "blogging"
   ],
-  "author": "Send In The Nerds",
-  "license": "FREE",
+  "author": "Send In The Nerds <everyone@sendinthenerds.com>",
+  "license": "UNLICENSE",
   "bugs": {
     "url": "https://github.com/sendinthenerds/jade-monkey/issues"
-  },
-  "dependencies": {
-    "jade": "~0.31.2",
-    "when": "~2.1.1"
-  }
+ }
 }
